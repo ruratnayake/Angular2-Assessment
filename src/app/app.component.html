@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-title">
+    <img class="logo margin-top" data-ng-src="Contents/images/star-movies.png" />
+  </div>
+  <div class='movies-container nav'>
+    <ul>
+      <li><a [routerLink]="['/welcome']">Home</a></li>
+      <li><a [routerLink]="['/About']">New Movie</a></li>
+      <li><a routerLink="#/About">About!</a></li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+  <!--<sm-list></sm-list>-->
+</div>

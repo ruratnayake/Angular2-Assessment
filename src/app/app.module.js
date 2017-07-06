@@ -7,7 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var movie_list_component_1 = require("./movie/movie-list.component");
+var about_component_1 = require("./about/about.component");
+var movie_details_component_1 = require("./movie/movie-details.component");
+var movie_new_component_1 = require("./movie/movie-new.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -15,8 +21,18 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule,
+            router_1.RouterModule.forRoot([
+                { path: 'home', component: movie_list_component_1.MovieListComponent },
+                { path: 'new-movie', component: movie_new_component_1.MovieUpdateComponent },
+                { path: 'update-movie/:id', component: movie_new_component_1.MovieUpdateComponent },
+                { path: 'movie-details/:id', component: movie_details_component_1.MovieDetailsComponent },
+                { path: 'about', component: about_component_1.AboutComponent },
+                { path: '', redirectTo: 'home', pathMatch: 'full' } /*,
+                { path: '**', redirectTo: 'home', pathMatch: 'full' }*/
+            ])
+        ],
+        declarations: [app_component_1.AppComponent, movie_list_component_1.MovieListComponent, movie_details_component_1.MovieDetailsComponent, movie_new_component_1.MovieUpdateComponent, about_component_1.AboutComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

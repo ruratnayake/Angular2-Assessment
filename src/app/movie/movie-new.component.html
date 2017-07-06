@@ -1,0 +1,96 @@
+<div>
+  <table>
+    <tr>
+      <td colspan="2"><b *ngIf='(movie.Id)'>{{movie.Title}}({{movie.ReleaseDate | date : 'yyyy'}})</b></td>
+    </tr>
+    <tr>
+      <td>
+        <img [src]='movie.Cover' [style.height.px]='imageHeight' [style.margin.top.px]='10' *ngIf="movie.Cover" />
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>
+              Movie Title
+            </td>
+            <td>
+              <textarea type="text" [(ngModel)]='movie.Title' rows="1" cols="60" required></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Cover (image Url)
+            </td>
+            <td>
+              <textarea type="text" [(ngModel)]='movie.Cover' rows="1" cols="60"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Details
+            </td>
+            <td>
+              <textarea type="text" [(ngModel)]='movie.Description' rows="10" cols="60"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Director
+            </td>
+            <td>
+              <textarea type="text" [(ngModel)]='movie.Director' rows="1" cols="60"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Release Date
+            </td>
+            <td>
+              <input type="date" [(ngModel)]='movie.ReleaseDate' class="width-150" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Rating
+            </td>
+            <td>
+              <input type="number" min="0" max="10" [(ngModel)]='movie.Rating' class="width-150" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Language
+            </td>
+            <td>
+              <input type="text" [(ngModel)]='movie.Language' class="width-150" />
+            </td>
+          </tr>
+          <tr>
+            <td><b>Cast</b></td>
+            <td>
+              <table>
+                <tr *ngFor='let c of movie.Cast; let i = index'>
+                  <td><input type="text" [(ngModel)]='c.Role' /></td>
+                  <td><input type="text" [(ngModel)]='c.Actor' /></td>
+                  <td><input type="button" value="x" (click)="removeRole(c)"/></td>
+                </tr>
+                <tr>
+                  <td><input type="text" [(ngModel)]='newCast.Role' placeholder='Role' /></td>
+                  <td><input type="text" [(ngModel)]='newCast.Actor' placeholder="Actor" /></td>
+                  <td><input type="button" value="+" (click)="addRole(newCast)"/></td>                  
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+          <input type="button" value='Save/ Update' (click)='saveMovie()' />
+          <input type="button" value="Cancel" (click)="resetForm()" />
+          </td>
+    </tr>
+  </table>
+</div>

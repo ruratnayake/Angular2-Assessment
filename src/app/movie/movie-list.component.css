@@ -1,0 +1,21 @@
+div {
+    background-color: bisque;
+}
+
+.movie-detail {
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 0 5px 15px;
+    margin:  5px 5px 5px 5px;
+}
+
+.float-right {
+    float: right;
+    margin-right: 10px;
+}
+.align-top{
+    text-align: top ;
+}
+.align-left{
+    text-align: left;
+}

@@ -1,0 +1,24 @@
+<div>
+  <table>
+    <tr *ngFor='let movie of movies'>
+      <td>
+        <img src={{movie.Cover}} [style.width.px]='imageWidth' [title]="movie.Title" *ngIf="movie.Cover" />
+      </td>
+      <td class="align-top">
+        <a [routerLink]="['/movie-details',movie.Id]">
+          <b>{{movie.Title}} ({{movie.ReleaseDate | date: 'yyyy'}})</b>
+        </a>
+        <div>{{movie.Description}}</div>
+      </td>
+      <td style="width: 10%">
+        <div class="float-right" style="position: absolute">
+          <div class='glyphicon-star' style="display: inline">☆ </div>
+          <div class='glyphicon-star' style="display: inline">☆ </div>
+          <div class='glyphicon-star' style="display: inline">☆ </div>
+          <div class='glyphicon-star' style="display: inline">☆ </div>
+          <div class='glyphicon-star' style="display: inline">☆ </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

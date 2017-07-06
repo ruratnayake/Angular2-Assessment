@@ -1,0 +1,23 @@
+<div>
+  <table>
+    <tr>
+      <td colspan="2">
+          <b>{{movie.Title}}({{movie.ReleaseDate | date : 'yyyy'}})</b>
+          <a [routerLink]="['/update-movie',movie.Id]">Edit</a>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <img [src]='movie.Cover' 
+                [style.height.px]='imageHeight'
+                *ngIf="movie.Cover"  />
+        </td>
+        <td>
+            <span>{{movie.Description}}</span><br>
+            <ul>
+                <li *ngFor='let c of movie.Cast'>{{c.Role}} ({{c.Actor}})</li>
+            </ul>
+        </td>
+    </tr>
+  </table>
+</div>

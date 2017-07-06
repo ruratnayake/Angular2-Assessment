@@ -3,3 +3,84 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+
+body{
+    height: 100%;
+    background-image:  url("http://wallpapercave.com/wp/GRDCsEG.jpg");
+    background-color: #c6c6ec !important;
+}
+
+#container {
+    width: 60%;
+    height: 100%;
+    background-color: transparent;
+    margin: 0 20% 0 20%;
+    border-color: grey;
+}
+
+.page-title{
+  font-size: 48px;
+  font-weight: 800;
+  color: white; 
+  text-align: center;
+}
+
+.movies-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-border {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.margin-botton {
+    margin-bottom: 12px;
+}
+
+.margin-top {
+    margin-top: 12px;
+}
+
+.movie-tile {
+    margin-top: 12px;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav li {
+    float: left;
+}
+
+    .nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .nav li a:hover {
+            background-color: #111;
+        }
+
+.txt-fix-width {
+    width: 370px;
+}
+
+.error {
+    color: red;
+}
+
+
+
+.title-margin-left {
+    margin-left: 20px;
+}
